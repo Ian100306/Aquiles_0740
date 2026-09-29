@@ -3,92 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aquiles_0740 — jogos, futebol, tecnologia e conteúdo.">
+  <meta name="description" content="Aquiles_0740 — criador de conteúdo de jogos. Todos os links em um só lugar.">
+  <meta name="theme-color" content="#050f26">
   <title>Aquiles_0740 | Links</title>
-  <link rel="icon" href="avatar.jpg">
+  <link rel="icon" href="avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="background">
-    <div class="aurora aurora-1"></div>
-    <div class="aurora aurora-2"></div>
-    <div class="aurora aurora-3"></div>
-    <div class="grid"></div>
-    <div id="particles"></div>
+  <div class="background" aria-hidden="true">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
   </div>
 
   <main class="page">
-    <header class="profile">
-      <button class="round-button menu" aria-label="Menu" onclick="showMessage('Em breve: menu personalizado')">
-        <span>•••</span>
-      </button>
-
-      <button class="round-button share" aria-label="Compartilhar" onclick="sharePage()">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 16V3M12 3l-5 5M12 3l5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/>
-        </svg>
-      </button>
-
-      <div class="avatar-wrap">
-        <div class="avatar-glow"></div>
-        <img class="avatar" src="avatar.jpg" alt="Aquiles_0740">
-      </div>
-
-      <h1>Aquiles_0740</h1>
-      <p class="bio">🎮 Jogos • ⚽ Futebol • 💻 Tecnologia</p>
-
-      <div class="socials">
-        <a href="https://instagram.com/aquiles_0740" target="_blank" rel="noopener" aria-label="Instagram" class="social instagram">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-        </a>
-        <a href="https://youtube.com/@aquiles_0740" target="_blank" rel="noopener" aria-label="YouTube" class="social youtube">
-          <svg viewBox="0 0 24 24"><path d="M21 8.2a3 3 0 0 0-2.1-2.1C17.1 5.6 12 5.6 12 5.6s-5.1 0-6.9.5A3 3 0 0 0 3 8.2 31 31 0 0 0 2.5 12 31 31 0 0 0 3 15.8a3 3 0 0 0 2.1 2.1c1.8.5 6.9.5 6.9.5s5.1 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-3.8 31 31 0 0 0-.5-3.8Z"/><path class="play" d="m10 9 5 3-5 3Z"/></svg>
-        </a>
-        <a href="https://tiktok.com/@aquiles_0740" target="_blank" rel="noopener" aria-label="TikTok" class="social tiktok">
-          <svg viewBox="0 0 24 24"><path d="M15 4v10.2a4.3 4.3 0 1 1-3.5-4.2v3.2a1.3 1.3 0 1 0 1.5 1.3V4h2Z"/></svg>
-        </a>
-      </div>
-    </header>
-
-    <section class="links" aria-label="Meus links">
-      <a class="link-card" href="https://instagram.com/aquiles_0740" target="_blank" rel="noopener">
-        <span class="link-icon">◎</span>
-        <span class="link-text">Instagram</span>
-        <span class="dots">•••</span>
-      </a>
-
-      <a class="link-card" href="https://youtube.com/@aquiles_0740" target="_blank" rel="noopener">
-        <span class="link-icon">▶</span>
-        <span class="link-text">YouTube</span>
-        <span class="dots">•••</span>
-      </a>
-
-      <a class="link-card" href="https://tiktok.com/@aquiles_0740" target="_blank" rel="noopener">
-        <span class="link-icon">♪</span>
-        <span class="link-text">TikTok</span>
-        <span class="dots">•••</span>
-      </a>
-
-      <a class="link-card" href="#" onclick="showMessage('Adicione aqui o seu Discord!'); return false;">
-        <span class="link-icon">💬</span>
-        <span class="link-text">Meu Discord</span>
-        <span class="dots">•••</span>
-      </a>
-    </section>
-
-    <button class="join" onclick="copyProfile()">
-      <span class="join-dot"></span>
-      Compartilhe meu perfil
+    <button class="share" aria-label="Compartilhar página" onclick="sharePage()">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3M12 3l-5 5M12 3l5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>
     </button>
 
-    <footer>
-      <strong>Aquiles_0740</strong>
-      <span>•</span>
-      <span>Todos os meus links em um só lugar</span>
-    </footer>
+    <header class="profile">
+      <img class="avatar" src="avatar.png" alt="Foto de perfil de Aquiles_0740" width="132" height="132">
+      <h1>Aquiles_0740</h1>
+      <p class="bio">Criador de conteúdo de jogos</p>
+    </header>
+
+    <nav class="links" aria-label="Redes sociais">
+      <a class="link" href="https://instagram.com/aquiles_0740" target="_blank" rel="noopener">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <span class="label">Instagram</span>
+        <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+
+      <a class="link" href="https://youtube.com/@aquiles_0740" target="_blank" rel="noopener">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></svg>
+        </span>
+        <span class="label">YouTube</span>
+        <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+
+      <a class="link" href="https://tiktok.com/@aquiles_0740" target="_blank" rel="noopener">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.3 2.4 1.7 3.9 4 4v3.1c-1.4.1-2.7-.3-4-1.1v6.1c0 3.9-3.2 6.1-6.300 5.600-2.800-.5-4.700-3-4.300-5.9.4-3 3.2-4.9 6-4.400v3.2c-1.400-.4-2.9.4-3.1 1.800-.2 1.500 1.1 2.700 2.500 2.400 1.1-.2 1.700-1.1 1.700-2.2V3h3.500Z"/></svg>
+        </span>
+        <span class="label">TikTok</span>
+        <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </nav>
+
+    <footer>© <span id="year"></span> Aquiles_0740</footer>
   </main>
 
-  <div id="toast" class="toast"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
 </html>
