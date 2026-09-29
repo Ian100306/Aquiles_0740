@@ -1,222 +1,110 @@
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+:root{
+  --bg:#061536;
+  --panel:#081b43;
+  --line:rgba(120,180,255,.42);
+  --text:#fff;
+  --accent:#27ff39;
+  --cyan:#00c8ff;
 }
+html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{min-height:100vh;background:#030d22;color:var(--text);overflow-x:hidden}
 
-:root {
-  --bg: #0a1f4f;
-  --bg-deep: #06183d;
-  --green: #28ff18;
-  --white: #ffffff;
-  --line: rgba(255,255,255,.78);
-  --card: rgba(4, 26, 70, .58);
+.background{position:fixed;inset:0;overflow:hidden;background:
+ radial-gradient(circle at 50% 0%,#123b82 0%,#071b43 32%,#030d22 100%);z-index:-5}
+.aurora{position:absolute;border-radius:50%;filter:blur(65px);opacity:.38;mix-blend-mode:screen}
+.aurora-1{width:430px;height:430px;background:#006eff;left:-160px;top:-130px;animation:float1 13s ease-in-out infinite alternate}
+.aurora-2{width:420px;height:420px;background:#00d5ff;right:-170px;top:20%;animation:float2 16s ease-in-out infinite alternate}
+.aurora-3{width:360px;height:360px;background:#4d00ff;left:35%;bottom:-210px;animation:float3 12s ease-in-out infinite alternate}
+.grid{position:absolute;inset:0;opacity:.14;background-image:
+ linear-gradient(rgba(70,180,255,.25) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(70,180,255,.25) 1px,transparent 1px);
+background-size:42px 42px;mask-image:linear-gradient(to bottom,transparent,black 25%,black 80%,transparent)}
+.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:#9fe9ff;box-shadow:0 0 10px #00c8ff;opacity:.7;animation:rise linear infinite}
+
+.page{
+ width:min(100%,700px);min-height:100vh;margin:auto;
+ padding:28px 38px 34px;
+ background:linear-gradient(180deg,rgba(5,23,58,.88),rgba(3,17,43,.76));
+ border-left:1px solid rgba(110,180,255,.12);
+ border-right:1px solid rgba(110,180,255,.12);
+ box-shadow:0 0 90px rgba(0,0,0,.3);
+ position:relative
 }
-
-html, body {
-  margin: 0;
-  min-height: 100%;
-  font-family: Georgia, "Times New Roman", serif;
+.profile{text-align:center;position:relative}
+.round-button{
+ position:absolute;top:0;width:56px;height:56px;border-radius:50%;
+ border:1px solid rgba(160,210,255,.34);background:rgba(4,19,48,.55);
+ backdrop-filter:blur(10px);color:white;cursor:pointer;
+ transition:.25s;z-index:2
 }
+.round-button:hover{transform:translateY(-2px) scale(1.05);border-color:var(--cyan);box-shadow:0 0 24px rgba(0,200,255,.22)}
+.menu{left:0}.menu span{font-size:20px;letter-spacing:3px;position:relative;top:-3px}
+.share{right:0}
+.share svg{width:25px;height:25px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 
-body {
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 50% 10%, rgba(20, 74, 145, .22), transparent 34%),
-    linear-gradient(90deg, #162b52 0%, #0b214f 18%, var(--bg) 50%, #0b214f 82%, #162b52 100%);
-  color: var(--white);
+.avatar-wrap{width:138px;height:138px;margin:4px auto 22px;position:relative}
+.avatar-glow{position:absolute;inset:-7px;border-radius:50%;
+ background:conic-gradient(from 0deg,#00c8ff,#006eff,#00eaff,#006eff,#00c8ff);
+ filter:blur(5px);opacity:.75;animation:spin 7s linear infinite}
+.avatar{position:relative;width:138px;height:138px;border-radius:50%;object-fit:cover;
+ border:2px solid #08c8ff;display:block;box-shadow:inset 0 0 0 5px rgba(0,20,55,.45),0 0 25px rgba(0,174,255,.28)}
+
+h1{margin:0;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:42px;letter-spacing:.3px;text-shadow:0 0 16px rgba(39,255,57,.14)}
+.bio{margin:9px 0 21px;color:rgba(255,255,255,.68);font-size:14px;letter-spacing:.4px}
+
+.socials{display:flex;justify-content:center;gap:22px;margin-bottom:48px}
+.social{width:47px;height:47px;border-radius:14px;display:grid;place-items:center;
+ color:#fff;background:rgba(7,31,73,.72);border:1px solid rgba(150,210,255,.2);
+ transition:.25s;box-shadow:0 8px 22px rgba(0,0,0,.15)}
+.social:hover{transform:translateY(-4px);border-color:rgba(0,200,255,.65);box-shadow:0 0 25px rgba(0,180,255,.2)}
+.social svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.youtube svg{fill:currentColor;stroke:none}.youtube .play{fill:#071b43}
+.tiktok svg{fill:currentColor;stroke:none}
+
+.links{display:flex;flex-direction:column;gap:17px}
+.link-card{
+ min-height:78px;position:relative;display:flex;align-items:center;justify-content:center;
+ color:#fff;text-decoration:none;border:1px solid var(--line);border-radius:20px;
+ background:linear-gradient(110deg,rgba(8,36,82,.76),rgba(4,23,59,.68));
+ backdrop-filter:blur(8px);overflow:hidden;
+ box-shadow:0 9px 30px rgba(0,0,0,.12);
+ transition:.25s
 }
+.link-card:before{content:"";position:absolute;left:-80%;top:0;width:50%;height:100%;
+ background:linear-gradient(90deg,transparent,rgba(255,255,255,.09),transparent);
+ transform:skewX(-20deg);transition:.6s}
+.link-card:hover{transform:translateY(-3px);border-color:rgba(0,210,255,.8);box-shadow:0 12px 34px rgba(0,120,255,.16)}
+.link-card:hover:before{left:130%}
+.link-text{font-size:19px;font-weight:600;letter-spacing:.2px}
+.link-icon{position:absolute;left:22px;width:34px;height:34px;display:grid;place-items:center;border-radius:10px;
+ background:rgba(0,190,255,.09);color:#dff9ff;font-size:21px}
+.dots{position:absolute;right:23px;color:var(--accent);font-size:18px;letter-spacing:2px;top:50%;transform:translateY(-56%)}
 
-.page {
-  width: min(100%, 680px);
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 24px 32px 34px;
-  background: linear-gradient(180deg, #061a46 0%, #051a45 100%);
-  position: relative;
-  overflow: hidden;
-}
+.join{display:flex;align-items:center;gap:9px;margin:82px auto 35px;padding:15px 24px;border:1px solid rgba(0,0,0,.08);
+border-radius:999px;background:#fff;color:#0b1020;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.22);transition:.22s}
+.join:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.28)}
+.join-dot{width:8px;height:8px;background:#16e329;border-radius:50%;box-shadow:0 0 9px #16e329}
 
-.profile {
-  text-align: center;
-  position: relative;
-}
+footer{text-align:center;color:rgba(255,255,255,.55);font-size:12px;padding-bottom:8px}
+footer strong{color:rgba(255,255,255,.82)}footer span{margin:0 5px}
 
-.icon-btn {
-  position: absolute;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 50%;
-  background: rgba(3, 20, 51, .55);
-  color: #fff;
-  font-size: 29px;
-  line-height: 42px;
-  cursor: pointer;
-  transition: .2s ease;
-}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,25px);opacity:0;pointer-events:none;
+background:#fff;color:#0b1020;padding:12px 18px;border-radius:999px;font-weight:700;font-size:13px;transition:.25s;z-index:10}
+.toast.show{opacity:1;transform:translate(-50%,0)}
 
-.icon-btn:hover {
-  transform: scale(1.05);
-  border-color: rgba(255,255,255,.6);
-}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float1{to{transform:translate(100px,90px) scale(1.15)}}
+@keyframes float2{to{transform:translate(-110px,-70px) scale(1.18)}}
+@keyframes float3{to{transform:translate(60px,-80px) scale(1.12)}}
+@keyframes rise{from{transform:translateY(100vh);opacity:0}15%{opacity:.7}85%{opacity:.7}to{transform:translateY(-10vh);opacity:0}}
 
-.menu { left: 0; }
-.share { right: 0; font-size: 28px; }
-
-.avatar {
-  width: 112px;
-  height: 112px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #16baff;
-  box-shadow: 0 0 22px rgba(0, 145, 255, .25);
-  margin-top: 4px;
-}
-
-h1 {
-  color: var(--green);
-  font-size: clamp(27px, 5vw, 34px);
-  margin: 20px 0 16px;
-  font-weight: 700;
-}
-
-.socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 27px;
-  margin-bottom: 46px;
-}
-
-.socials a {
-  color: white;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform .2s ease, filter .2s ease;
-}
-
-.socials a:hover {
-  transform: translateY(-3px) scale(1.08);
-  filter: drop-shadow(0 0 7px rgba(255,255,255,.35));
-}
-
-.instagram { font-family: Arial, sans-serif; font-size: 39px; font-weight: 400; }
-.youtube { font-family: Arial, sans-serif; font-size: 23px; border-radius: 8px; }
-.tiktok { font-family: Arial, sans-serif; font-size: 39px; }
-
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 17px;
-}
-
-.link-card {
-  min-height: 78px;
-  border: 1.5px solid var(--line);
-  border-radius: 19px;
-  color: var(--green);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  font-size: 21px;
-  background: rgba(3, 21, 55, .18);
-  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-}
-
-.link-card:hover {
-  transform: translateY(-2px);
-  background: rgba(17, 55, 105, .35);
-  box-shadow: 0 7px 24px rgba(0,0,0,.18);
-}
-
-.link-card b {
-  position: absolute;
-  right: 24px;
-  font-family: Arial, sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-}
-
-.join {
-  display: block;
-  margin: 110px auto 42px;
-  border: 0;
-  border-radius: 32px;
-  padding: 17px 24px;
-  background: #fff;
-  color: #111;
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 7px 22px rgba(0,0,0,.16);
-  transition: transform .2s ease;
-}
-
-.join:hover {
-  transform: translateY(-2px);
-}
-
-footer {
-  text-align: center;
-  color: rgba(255,255,255,.9);
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  padding-bottom: 8px;
-}
-
-.toast {
-  position: fixed;
-  left: 50%;
-  bottom: 28px;
-  transform: translate(-50%, 30px);
-  opacity: 0;
-  pointer-events: none;
-  background: #fff;
-  color: #111;
-  padding: 12px 18px;
-  border-radius: 22px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  transition: .25s ease;
-}
-
-.toast.show {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
-@media (max-width: 560px) {
-  .page {
-    padding: 22px 17px 28px;
-  }
-
-  .icon-btn {
-    width: 46px;
-    height: 46px;
-  }
-
-  .avatar {
-    width: 104px;
-    height: 104px;
-  }
-
-  .socials {
-    margin-bottom: 35px;
-  }
-
-  .link-card {
-    min-height: 72px;
-  }
-
-  .join {
-    margin-top: 78px;
-  }
+@media(max-width:560px){
+ .page{padding:23px 18px 30px}
+ .round-button{width:49px;height:49px}
+ .avatar-wrap,.avatar{width:120px;height:120px}
+ h1{font-size:34px}
+ .socials{margin-bottom:37px}
+ .link-card{min-height:70px}
+ .join{margin-top:65px}
 }
