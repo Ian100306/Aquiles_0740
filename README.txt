@@ -1,16 +1,15 @@
-# Site Aquiles_0740
+# Aquiles_0740 — versão 2
 
-Site de links inspirado no modelo enviado pelo usuário.
+Visual atualizado inspirado na referência enviada:
+- fundo azul gamer com auroras animadas
+- partículas luminosas flutuando
+- grade tecnológica discreta
+- avatar com brilho animado
+- cards modernos com efeito de brilho ao passar o mouse
+- ícones SVG para Instagram, YouTube e TikTok
+- layout responsivo para celular e PC
 
-Arquivos:
-- index.html — página principal
-- style.css — visual/responsividade
-- script.js — compartilhar e copiar link
-- avatar.jpg — imagem de perfil recortada da referência enviada
+Edite o arquivo index.html para trocar os links.
+O botão "Meu Discord" está preparado para você colocar seu convite.
 
-Para alterar os links, abra o index.html e troque as URLs do Instagram, YouTube e TikTok.
-
-Para publicar:
-1. Coloque todos os arquivos na mesma pasta.
-2. Abra o index.html para testar.
-3. Para colocar na internet, envie a pasta para um serviço de hospedagem de sites estáticos.
+Para testar: abra index.html no navegador.
